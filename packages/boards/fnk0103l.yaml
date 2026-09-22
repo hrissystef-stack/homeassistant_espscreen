@@ -1,6 +1,6 @@
 ############################################################
-# ESP Screens - CYD board (ESP32-2432S028, "Cheap Yellow Display")
-# Built-in ILI9341 320x240 display and XPT2046 resistive touch.
+# ESP Screens - Freenove FNK0103L
+# Built-in ST7789V 240x320 display and XPT2046 resistive touch.
 #
 # What is in here: the hardware (display, touch, backlight, LED), the sizes the
 # shared tree takes from this board, the code the shared lambdas take from this
