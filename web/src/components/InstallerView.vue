@@ -219,6 +219,7 @@ onBeforeUnmount(() => clearInterval(poll));
           <label class="board"><input type="radio" name="board" value="waveshare43" v-model="form.board" /><span><b>{{ t("editor.installer.board_waveshare43") }}</b><small>ESP32-S3-Touch-LCD-4.3 · 800 × 480 · GT911</small></span></label>
           <label class="board"><input type="radio" name="board" value="jc8012p4a1" v-model="form.board" /><span><b>{{ t("editor.installer.board_jc8012p4a1") }}</b><small>JC8012P4A1 · 1280 × 800 · GSL3680</small><em>{{ t("editor.installer.board_new") }}</em></span></label>
           <label class="board"><input type="radio" name="board" value="waveshare7" v-model="form.board" /><span><b>{{ t("editor.installer.board_waveshare7") }}</b><small>ESP32-S3-Touch-LCD-7 · 800 × 480 · GT911</small><em>{{ t("editor.installer.board_experimental") }}</em></span></label>
+          <label class="board"><input type="radio" name="board" value="fnk0103l" v-model="form.board" /><span><b>Freenove FNK0103L</b><small>ESP32 · 240 × 320 · ST7789V · XPT2046</small><em>{{ t("editor.installer.board_new") }}</em></span></label>
         </div>
         <p v-if="form.board === 'waveshare7'" class="hint">{{ t("editor.installer.waveshare7_experimental") }}</p>
       </fieldset>
