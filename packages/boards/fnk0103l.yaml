@@ -27,13 +27,13 @@ substitutions:
   # the margin beside them count (a capacitive Guition loses a fast finger 30-50 px before its edge).
   SLIDER_EDGE_SNAP_PX: "20"
   # The key of this board file; the firmware reports it so ESP Screens knows what board a screen is.
-  BOARD_ID: "cyd"
+  BOARD_ID: "fnk0103l"
   # This board's backlight takes levels (a PWM pin), so brightness is a percentage.
   BACKLIGHT_DIMMABLE: "true"
   # The screen can go dark: standby and night dim it, and Sleep and Wake exist.
   CAN_STANDBY: "true"
-  DEVICE_NAME: "cyd-new"
-  DEVICE_FRIENDLY_NAME: "My CYD"
+  DEVICE_NAME: "fnk0103l-new"
+  DEVICE_FRIENDLY_NAME: "My FNK0103L"
   TOUCH_AFFINE_XX: "1.000000000"
   TOUCH_AFFINE_XY: "0.000000000"
   TOUCH_AFFINE_XC: "0.000000000"
@@ -59,10 +59,10 @@ substitutions:
   # Measured on this board: median top-right raw=(523,3390),
   # bottom-left raw=(3487,482), at screen (299,20) and (20,219).
   # Extrapolated to panel edges; verify with the isolated corner test.
-  TOUCH_CAL_X_MIN: "280"
-  TOUCH_CAL_X_MAX: "3860"
-  TOUCH_CAL_Y_MIN: "340"
-  TOUCH_CAL_Y_MAX: "3860"
+  TOUCH_CAL_X_MIN: "200"
+  TOUCH_CAL_X_MAX: "3900"
+  TOUCH_CAL_Y_MIN: "200"
+  TOUCH_CAL_Y_MAX: "3900"
   # The tile grid: columns and rows of cells, the side margin and the gaps between cells. The shared tree places
   # every cell from these (runtime_tiles::place_page), so a board with more room states more columns or rows.
   GRID_COLS: "2"
@@ -374,30 +374,13 @@ display:
   - platform: mipi_spi
     id: my_display
     spi_id: lcd
-    # Standard single-Micro-USB CYD; 40MHz matches ESPHome's board preset.
-    model: ILI9341
+    model: ST7789V
     data_rate: 40MHz
     cs_pin: 15
     dc_pin: 2
     invert_colors: false
     update_interval: never
     auto_clear_enabled: false
-
-    # Panel tuning, appended after ESPHome's built-in ILI9341 sequence. With the
-    # defaults (line inversion, 79 Hz) the cheap CYD panel shows a fine vertical
-    # stripe pattern that flickers when you move your eyes or the board: the
-    # two polarities of adjacent columns differ in brightness. Frame inversion
-    # (0xB4 = 0x07) removes the stripes; the maximum frame rate (0xB1 = 0x10,
-    # 119 Hz) keeps the resulting whole-frame flicker above what the eye sees.
-    # VCOM (0xC5) stayed at the default; sweeping it changed contrast, not the
-    # stripes. Checked on the bench CYD on 2026-09-15.
-    init_sequence:
-      - [0xB4, 0x07]
-      - [0xB1, 0x00, 0x10]
-
-    # Native panel dimensions (portrait). Do NOT swap these per orientation and
-    # do NOT add a display transform — rotation is handled by LVGL below.
-    # ESPHome 2026.6+ rejects a swapped transform here with "Invalid offsets".
     dimensions:
       width: 240
       height: 320
