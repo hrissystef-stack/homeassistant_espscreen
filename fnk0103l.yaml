@@ -1,1 +1,33 @@
+############################################################
+# ESP Screens - Freenove FNK0103L
+############################################################
+substitutions:
+  FONT_DIR: "fonts"
 
+packages:
+  core: !include packages/core.yaml
+  board: !include packages/boards/fnk0103l.yaml
+
+external_components:
+  - source:
+      type: local
+      path: components
+    components: [xpt2046, smart_display]
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: none
+  ap:
+    ssid: "Smartdisplay Fallback Hotspot"
+    password: !secret ap_password
+
+captive_portal:
