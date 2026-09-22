@@ -1666,6 +1666,7 @@
       "intro": "ESP Screens creates the screen's own profile with unique keys and builds the firmware. Connect the screen with a USB data cable to the machine running Home Assistant, or download the firmware and put it on the screen from your own computer.",
       "board": "Which screen do you have?",
       "board_cyd": "CYD · 2.8 inch",
+      "board_fnk0103l": "Freenove FNK0103L · 3.2 inch",
       "board_guition": "Guition · 4 inch",
       "board_waveshare43": "Waveshare · 4.3 inch",
       "board_jc8012p4a1": "Guition · 10.1 inch",
