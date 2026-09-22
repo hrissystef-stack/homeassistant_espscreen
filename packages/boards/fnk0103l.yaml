@@ -282,7 +282,7 @@ output:
 
   - platform: ledc
     id: output_red
-    pin: GPIO4
+    pin: GPIO22
     inverted: true
   - platform: ledc
     id: output_green
