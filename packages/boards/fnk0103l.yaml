@@ -74,7 +74,7 @@ substitutions:
   GRID_MARGIN: "9"
   GRID_GAP_X: "8"
   GRID_GAP_Y: "4"
-  DISPLAY_DPI: "143"      # diagonal pixels / diagonal inches; the look's reference density on this board
+  DISPLAY_DPI: "125"      # diagonal pixels / diagonal inches; the look's reference density on this board
   LOOK: "compact"
   SCROLL_Y: "40"
   HEADER_Y: "14"
