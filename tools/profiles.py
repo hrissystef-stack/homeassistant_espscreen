@@ -28,7 +28,7 @@ ENTRIES = {'home-like-2432s028.yaml': 'cyd', 'guition-4848s040.yaml': 'guition',
            'packages/fnk0103l.yaml': 'fnk0103l'}
 # The names the entry files are known by, in the order the older tests listed them.
 PROFILES = ('home-like-2432s028.yaml', 'guition-4848s040.yaml', 'waveshare-esp32s3-43.yaml', 'guition-jc8012p4a1.yaml', 'waveshare-esp32s3-7.yaml')
-PACKAGES = ('packages/cyd.yaml', 'packages/guition.yaml', 'packages/waveshare43.yaml', 'packages/jc8012p4a1.yaml', 'packages/waveshare7.yaml')
+PACKAGES = ('packages/cyd.yaml', 'packages/guition.yaml', 'packages/waveshare43.yaml', 'packages/jc8012p4a1.yaml', 'packages/waveshare7.yaml', 'packages/fnk0103l.yaml')
 NAMES = PROFILES + PACKAGES
 
 
